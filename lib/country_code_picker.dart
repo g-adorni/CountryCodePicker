@@ -7,6 +7,7 @@ import 'src/country_code.dart';
 import 'src/country_codes.dart';
 import 'src/selection_dialog.dart';
 
+export 'src/utils.dart';
 export 'src/country_code.dart';
 export 'src/country_codes.dart';
 export 'src/country_localizations.dart';
