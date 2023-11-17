@@ -37,6 +37,7 @@ class MyAppState extends State<MyApp> {
                 initialSelection: 'IT',
                 favorite: ['IT'],
                 showCountryOnly: true,
+                showNationality: true,
 
                 // comparator: (a, b) => b.name.compareTo(a.name),
                 // //Get the country information relevant to the initial selection

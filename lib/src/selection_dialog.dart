@@ -7,6 +7,7 @@ import 'country_localizations.dart';
 class SelectionDialog extends StatefulWidget {
   final List<CountryCode> elements;
   final bool? showCountryOnly;
+  final bool showNationality;
   final InputDecoration searchDecoration;
   final TextStyle? searchStyle;
   final TextStyle? textStyle;
@@ -38,6 +39,7 @@ class SelectionDialog extends StatefulWidget {
     this.favoriteElements, {
     Key? key,
     this.showCountryOnly,
+    this.showNationality = false,
     this.emptySearchBuilder,
     InputDecoration searchDecoration = const InputDecoration(),
     this.searchStyle,
@@ -170,9 +172,11 @@ class _SelectionDialogState extends State<SelectionDialog> {
           Expanded(
             flex: 4,
             child: Text(
-              widget.showCountryOnly!
-                  ? e.toCountryStringOnly()
-                  : e.toLongString(),
+              widget.showNationality
+                  ? e.toNationalityStringOnly()
+                  : widget.showCountryOnly!
+                      ? e.toCountryStringOnly()
+                      : e.toLongString(),
               overflow: TextOverflow.fade,
               style: widget.textStyle,
             ),

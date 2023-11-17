@@ -20,8 +20,11 @@ class CountryCode {
   /// the dial code (+39,+93..)
   final String? dialCode;
 
+  final String? nationality;
+
   CountryCode({
     this.name,
+    this.nationality,
     this.flagUri,
     this.code,
     this.dialCode,
@@ -57,6 +60,7 @@ class CountryCode {
       code: json['code'],
       dialCode: json['dial_code'],
       flagUri: 'flags/${json['code'].toLowerCase()}.png',
+      nationality: json['nationality'],
     );
   }
 
@@ -69,7 +73,15 @@ class CountryCode {
     return '$_cleanName';
   }
 
+  String toNationalityStringOnly() {
+    return '$_cleanNationality';
+  }
+
   String? get _cleanName {
     return name?.replaceAll(RegExp(r'[[\]]'), '').split(',').first;
+  }
+
+  String? get _cleanNationality {
+    return nationality?.replaceAll(RegExp(r'[[\]]'), '').split(',').first;
   }
 }

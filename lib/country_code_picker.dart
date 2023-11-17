@@ -1,4 +1,4 @@
-library country_code_picker;
+library country_nationality_picker;
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/material.dart';
@@ -50,6 +50,9 @@ class CountryCodePicker extends StatefulWidget {
 
   /// shows the name of the country instead of the dialcode
   final bool showOnlyCountryWhenClosed;
+
+  /// Nazionalità
+  final bool showNationality;
 
   /// aligns the flag and the Text left
   ///
@@ -106,6 +109,7 @@ class CountryCodePicker extends StatefulWidget {
     this.dialogTextStyle,
     this.emptySearchBuilder,
     this.showOnlyCountryWhenClosed = false,
+    this.showNationality = false,
     this.alignLeft = false,
     this.showFlag = true,
     this.showFlagDialog,
@@ -201,7 +205,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                         : const EdgeInsets.only(right: 16.0),
                     child: Image.asset(
                       selectedItem!.flagUri!,
-                      package: 'country_code_picker',
+                      package: 'country_nationality_picker',
                       width: widget.flagWidth,
                     ),
                   ),
@@ -210,9 +214,11 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                 Flexible(
                   fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
                   child: Text(
-                    widget.showOnlyCountryWhenClosed
-                        ? selectedItem!.toCountryStringOnly()
-                        : selectedItem.toString(),
+                    widget.showNationality
+                        ? selectedItem!.toNationalityStringOnly()
+                        : widget.showOnlyCountryWhenClosed
+                            ? selectedItem!.toCountryStringOnly()
+                            : selectedItem.toString(),
                     style: widget.textStyle ??
                         Theme.of(context).textTheme.labelLarge,
                     overflow: widget.textOverflow,
@@ -310,6 +316,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
             searchDecoration: widget.searchDecoration,
             searchStyle: widget.searchStyle,
             textStyle: widget.dialogTextStyle,
+            showNationality: widget.showNationality,
             boxDecoration: widget.boxDecoration,
             showFlag: widget.showFlagDialog ?? widget.showFlag,
             flagWidth: widget.flagWidth,

@@ -19,6 +19,7 @@ class Utils {
           showCountryOnly: false,
           showFlag: true,
           closeIcon: const Icon(Icons.close),
+          showNationality: true,
         ),
       ),
     );
