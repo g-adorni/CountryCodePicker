@@ -3,11 +3,11 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 ![GitHub contributors](https://img.shields.io/github/contributors/chandrabezzo/CountryCodePicker)
-[![Pub](https://img.shields.io/pub/v/country_code_picker.svg)](https://pub.dartlang.org/packages/country_code_picker)
+[![Pub](https://img.shields.io/pub/v/country_nationality_picker.svg)](https://pub.dartlang.org/packages/country_nationality_picker)
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/salvatore-giordano/)
 [![Linkedin](https://i.stack.imgur.com/gVE0j.png) LinkedIn](https://www.linkedin.com/in/chandra-abdul-fattah/)
 
-# country_code_picker
+# country_nationality_picker
 
 A flutter package for showing a country code selector.
 
@@ -173,7 +173,7 @@ Here is a list of properties available to customize your widget:
 
 ## Contributions
 
-Contributions of any kind are more than welcome! Feel free to fork and improve country_code_picker in any way you want, make a pull request, or open an issue.
+Contributions of any kind are more than welcome! Feel free to fork and improve country_nationality_picker in any way you want, make a pull request, or open an issue.
 
 
 ## Getting involved
